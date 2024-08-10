@@ -7,10 +7,69 @@
     padding-top: 80px;
     padding-left: 40px;
     display: block;
-    background-color: white;
+    background-color: #E5E5E5;
 }
 
 .navbar li{
     margin-top: 20px;
 }
 
+.travel{
+    background-image:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(./assets/traveling.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+}
+
+.travel:hover{
+    background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./assets/traveling.jpg);
+}
+
+.travel:hover a{
+    display: block;
+}
+
+.smart-ticket{
+    background-image:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(./assets/smart-ticketing.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+}
+
+.smart-ticket:hover{
+    background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./assets/smart-ticketing.jpg);
+}
+
+.smart-ticket:hover a{
+    display: block;
+}
+
+.restaurent{
+    background-image:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(./assets/restaurant.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+}
+
+.restaurent:hover{
+    background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./assets/restaurant.jpg);
+}
+
+.restaurent:hover a{
+    display: block;
+}
+
+.office{
+    background-image:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(./assets/office.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+}
+
+.office:hover{
+    background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./assets/office.jpg);
+}
+
+.office:hover a{
+    display: block;
+}
