@@ -1,0 +1,16 @@
+.navbar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    padding-top: 80px;
+    padding-left: 40px;
+    display: block;
+    background-color: white;
+}
+
+.navbar li{
+    margin-top: 20px;
+}
+
