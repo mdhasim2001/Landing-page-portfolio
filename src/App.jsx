@@ -1,13 +1,12 @@
 import { useState } from "react"
 import "./App.css"
 import { CiMenuKebab } from "react-icons/ci"
-import { IoMdClose } from "react-icons/io"
+import { IoIosArrowRoundForward, IoMdClose } from "react-icons/io"
 import { MdCallMade, MdOutlineFileDownload } from "react-icons/md"
 import img from "./assets/Hasim.jpg"
 import { AiOutlineMail } from "react-icons/ai"
 import { IoCallOutline, IoLocationOutline } from "react-icons/io5"
-import { FaFacebook, FaInstagramSquare, FaTwitter } from "react-icons/fa"
-
+import { FaFacebook, FaInstagramSquare, FaLocationArrow, FaTwitter } from "react-icons/fa"
 
 
 function App() {
@@ -15,8 +14,8 @@ function App() {
   const [navbar, setNavbar] = useState(false)
 
   return (
-    <div className="">
-        <div className="w-full h-[10vh] lg:h-[15vh] navbar-font border-b border-black  lg:border-none">
+    <div className="bg-white pt-5">
+        <div className="w-full navbar-font pb-5 lg:pb-0 border-b border-black  lg:border-none">
           <nav className="lg:w-4/5 mx-5 h-full flex items-center justify-between lg:mx-auto">
               <h2 className="logo-font w-[10%] h-full cursor-pointer flex items-center text-3xl">hasim</h2>
               <ul className={`${navbar ? "navbar md:w-2/4" : "hidden"} uppercase text-[14px] lg:relative lg:flex gap-6 ml-10`}>
@@ -33,12 +32,13 @@ function App() {
             <CiMenuKebab onClick={() => setNavbar(true)} className="lg:hidden text-3xl" />
           </nav>
         </div>
-        <div className="lg:w-4/6 lg:mx-auto mx-5 h-[60vh] md:h-[85vh] flex items-center justify-between">
+        <div className="lg:w-4/6 lg:mx-auto mx-5 h-[85vh] flex items-center justify-between">
           <div className="">
             <div className="w-[150px] mx-auto">
               <img className="w-full h-[150px] border border-black rounded-full" src={img} alt="" />
             </div>
-            <h1 className="logo-font text-4xl m-5 text-center">MD HASIM</h1>
+            <h1 className="text-xl mt-5 text-center">Hi! I'am MD HASIM</h1>
+            <h2 className="text-center text-4xl font-bold logo-font my-5">frontend web developer <br />based in Bangladesh</h2>
             <p className="mb-5 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis minima veritatis eaque cupiditate ullam commodi! Cumque eveniet aliquam aspernatur? Voluptates dicta ducimus cum nostrum autem doloribus dolores tempore perspiciatis praesentium.</p>
             <div className="flex items-center justify-center">
               <a href="https://drive.google.com/file/d/19OAkKmrzrpmpTDtxgzBDzXrdEzovMMZ7/view?usp=drivesdk" target="_blank"><button className="flex items-center justify-center gap-2 py-3 px-4 md:px-5 border border-black mr-5">DOWNLOAD CV<MdOutlineFileDownload className="text-xl" /></button></a>
@@ -65,21 +65,48 @@ function App() {
 
         {/* projects */}
         <div id="work" className="lg:w-4/5 mx-5 lg:mx-auto pt-10">
+          <h2 className="text-center my-3">My Portfolio</h2>
           <h1 className="logo-font underline text-center text-2xl">My Letes Work</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
-            <div className="travel w-full h-[300px] flex items-center justify-center">
-              <a href="https://mdhasim2001.github.io/Travel-website/" target="_blank" className="text-4xl text-white hidden">Review</a>
+          <p className="lg:w-4/6 mx-auto mt-5 md:text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis aut provident voluptate iusto rerum modi ratione hic quo laboriosam</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
+            <div className="travel w-full h-[200px] rounded-md flex items-end justify-center">
+              <div className="w-4/5 bg-white mb-5 px-3 py-2 rounded-md flex items-center justify-between">
+                <div>
+                  <h1 className="font-bold">Travel</h1>
+                  <p className="text-[12px]">Web Design</p>
+                </div>
+                <a href="https://mdhasim2001.github.io/Travel-website/" className="p-2 border-[2px] border-green-600 rounded-full" target="blank"><FaLocationArrow /></a>
+              </div>
             </div>
-            <div className="smart-ticket w-full h-[300px] flex items-center justify-center">
-              <a href="https://mdhasim2001.github.io/smart-ticketing/" target="-blank" className="text-4xl text-white hidden">Review</a>
+            <div className="smart-ticket w-full h-[200px] rounded-md flex items-end justify-center">
+              <div className="w-4/5 bg-white mb-5 px-3 py-2 rounded-md flex items-center justify-between">
+                <div>
+                  <h1 className="font-bold">Smart Ticket</h1>
+                  <p className="text-[12px]">Web Design</p>
+                </div>
+                <a href="https://mdhasim2001.github.io/smart-ticketing/" className="p-2 border-[2px] border-green-600 rounded-full" target="blank"><FaLocationArrow /></a>
+              </div>
             </div>
-            <div className="restaurent w-full h-[300px] flex items-center justify-center">
-              <a href="https://restaurent-boss.netlify.app/" target="_blank" className="text-4xl text-white hidden">Review</a>
+            <div className="restaurent w-full h-[200px] rounded-md flex items-end justify-center">
+              <div className="w-4/5 bg-white mb-5 px-3 py-2 rounded-md flex items-center justify-between">
+                <div>
+                  <h1 className="font-bold">Restaurent</h1>
+                  <p className="text-[12px]">Web Design</p>
+                </div>
+                <a href="https://restaurent-boss.netlify.app/" className="p-2 border-[2px] border-green-600 rounded-full" target="blank"><FaLocationArrow /></a>
+              </div>
             </div>
-            <div className="office w-full h-[300px] flex items-center justify-center">
-              <a href="https://volunteer-management-cb618.web.app/" target="_blank" className="text-4xl text-white hidden">Review</a>
+            <div className="office w-full h-[200px] rounded-md flex items-end justify-center">
+              <div className="w-4/5 bg-white mb-5 px-3 py-2 rounded-md flex items-center justify-between">
+                <div>
+                  <h1 className="font-bold">Office</h1>
+                  <p className="text-[12px]">Web Design</p>
+                </div>
+                <a href="https://mdhasim2001.github.io/smart-ticketing/" className="p-2 border-[2px] border-green-600 rounded-full" target="blank"><FaLocationArrow /></a>
+              </div>
             </div>
           </div>
+          <button className="w-32 mt-10 mx-auto border border-black py-2 px-3 text-center flex items-center justify-between">Show more<IoIosArrowRoundForward /></button>
         </div>
 
         {/* contact me  */}
@@ -103,13 +130,16 @@ function App() {
         </div>
 
         <div className="px-5 lg:px-[10%] mt-20 py-12 bg-[#E5E5E5]">
-          <h1 className="logo-font text-3xl">hasim</h1>
-          <div className="flex gap-3">
-            <a className="text-2xl mt-5" href="https://www.facebook.com/hasim.nana.3?mibextid=ZbWKwL" target="_blank"><FaFacebook /></a>
-            <a className="text-2xl mt-5" href="https://x.com/mdhasim050?t=4CVi4JLyqe-yoUqp_84YDg&s=09" target="_blank"><FaTwitter /></a>
-            <a className="text-2xl mt-5" href="https://www.instagram.com/mdhasim.nana?igsh=MTN3bDgzYXF2MjE3NA==" target="_blank"><FaInstagramSquare /></a>
+          <h1 className="logo-font text-3xl text-center">hasim</h1>
+          <div className="flex gap-3 items-center justify-center">
+            <a className="text-2xl mt-5 hover:text-[#1877F2]" href="https://www.facebook.com/hasim.nana.3?mibextid=ZbWKwL" target="_blank"><FaFacebook /></a>
+            <a className="text-2xl mt-5 hover:text-[#1DA1F2]" href="https://x.com/mdhasim050?t=4CVi4JLyqe-yoUqp_84YDg&s=09" target="_blank"><FaTwitter /></a>
+            <a className="text-2xl mt-5 hover:text-[#EC375B]" href="https://www.instagram.com/mdhasim.nana?igsh=MTN3bDgzYXF2MjE3NA==" target="_blank"><FaInstagramSquare /></a>
           </div>
-        </div>
+          <div className="border border-black my-10">
+          </div>
+            <p className="text-center text-[14px]">2024 MD Hasim. All rights reserved.</p>
+          </div>
     </div>
   )
 }
