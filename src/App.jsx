@@ -37,11 +37,11 @@ function App() {
             <div className="w-[150px] mx-auto">
               <img className="w-full h-[150px] border border-black rounded-full" src={img} alt="" />
             </div>
-            <h1 className="text-xl mt-5 text-center">Hi! I'am MD HASIM</h1>
+            <h1 className="text-xl mt-5 text-center">Hi! I am MD HASIM</h1>
             <h2 className="text-center text-4xl font-bold logo-font my-5">frontend web developer <br />based in Bangladesh</h2>
             <p className="mb-5 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis minima veritatis eaque cupiditate ullam commodi! Cumque eveniet aliquam aspernatur? Voluptates dicta ducimus cum nostrum autem doloribus dolores tempore perspiciatis praesentium.</p>
             <div className="flex items-center justify-center">
-              <a href="https://drive.google.com/file/d/19OAkKmrzrpmpTDtxgzBDzXrdEzovMMZ7/view?usp=drivesdk" target="_blank"><button className="flex items-center justify-center gap-2 py-3 px-4 md:px-5 border border-black mr-5">DOWNLOAD CV<MdOutlineFileDownload className="text-xl" /></button></a>
+              <a href="./assets/RESUME.pdf" download="RESUME.pdf" target="_blank"><button className="flex items-center justify-center gap-2 py-3 px-4 md:px-5 border border-black mr-5">DOWNLOAD CV<MdOutlineFileDownload className="text-xl" /></button></a>
               <a href="#contact"><button className="flex items-center justify-center gap-2 py-3 px-4 md:px-5 border border-black">CONTACT ME<MdCallMade className="text-xl" /></button></a> 
             </div>
           </div>
@@ -59,6 +59,7 @@ function App() {
               <h1 className="text-2xl">MD Hasim</h1>
               <h1 className="text-xl my-3">I am a Web Devoloper</h1>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur repellat, quae corrupti facilis accusantium cumque dolore id totam neque explicabo suscipit deserunt accusamus tempora, natus cum praesentium laudantium! Est, natus.</p>
+              <button className="py-2 px-5 border border-black mt-10">Qualification</button>
             </div>
           </div>
         </div>
