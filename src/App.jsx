@@ -7,14 +7,14 @@ import img from "./assets/Hasim.jpg"
 import { AiOutlineMail } from "react-icons/ai"
 import { IoCallOutline, IoLocationOutline } from "react-icons/io5"
 import { FaFacebook, FaInstagramSquare, FaLocationArrow, FaTwitter } from "react-icons/fa"
-
+import Qualification from "./Qualification"
 
 function App() {
 
   const [navbar, setNavbar] = useState(false)
-
+  const [qualification, setQualification] = useState(false)
   return (
-    <div className="bg-white pt-5">
+    <div className={`bg-white pt-5 ${qualification ? "" : ""}`}>
         <div className="w-full navbar-font pb-5 lg:pb-0 border-b border-black  lg:border-none">
           <nav className="lg:w-4/5 mx-5 h-full flex items-center justify-between lg:mx-auto">
               <h2 className="logo-font w-[10%] h-full cursor-pointer flex items-center text-3xl">hasim</h2>
@@ -59,7 +59,8 @@ function App() {
               <h1 className="text-2xl">MD Hasim</h1>
               <h1 className="text-xl my-3">I am a Web Devoloper</h1>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur repellat, quae corrupti facilis accusantium cumque dolore id totam neque explicabo suscipit deserunt accusamus tempora, natus cum praesentium laudantium! Est, natus.</p>
-              <button className="py-2 px-5 border border-black mt-10">Qualification</button>
+              <button onClick={()=> {setQualification(true)}} className="hidden lg:block py-2 px-5 border border-black mt-10">Qualification</button>
+              <Qualification open={qualification} close={setQualification}/>
             </div>
           </div>
         </div>
