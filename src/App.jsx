@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef  } from "react";
 import "./App.css";
 import { CiMenuKebab } from "react-icons/ci";
 import { IoIosArrowRoundForward, IoMdClose } from "react-icons/io";
@@ -13,10 +13,34 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import Qualification from "./Qualification";
+import emailjs from '@emailjs/browser';
+import toast, { Toaster } from "react-hot-toast";
 
 function App() {
   const [navbar, setNavbar] = useState(false);
   const [qualification, setQualification] = useState(false);
+
+
+    const form = useRef();
+  
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs
+        .sendForm('service_9z73ftj', 'template_sykyt5a', form.current, {
+          publicKey: 's5qbTZI2PWUcOl1eJ',
+        })
+        .then(
+          () => {
+            toast.success('Successfully your message!')
+            
+          },
+          (error) => {
+            toast.error(error , "This didn't work.")
+          },
+        );
+    };
+
   return (
     <div id="home"  className={`bg-white pt-5 ${qualification ? "" : ""}`}>
       <div className="w-full bg-white shadow-sm fixed z-10 top-0 h-[8vh] lg:h-[12vh] navbar-font">
@@ -44,6 +68,9 @@ function App() {
               <a onClick={() => setNavbar(false)} href="#qualification">
                 Qualification
               </a>
+            </li>
+            <li>
+              <a onClick={() => setNavbar(false)} href="#work">serveces</a>
             </li>
             <li>
               <a onClick={() => setNavbar(false)} href="#work">Work</a>
@@ -273,25 +300,29 @@ function App() {
               Dhaka, Bangladesh
             </p>
           </div>
-          <form className="flex-1">
+          <form ref={form} onSubmit={sendEmail} className="flex-1">
             <input
               className="w-full mb-5 p-3  outline-none border border-black"
-              type="text" required
+              type="text" required name="name"
               placeholder="Enter your name"
             />
             <input
               className="w-full mb-5 p-3 outline-none border border-black"
-              type="email" required
+              type="email" required name="email"
               placeholder="Enter your email"
             />
             <textarea
               className="w-full border resize-none mb-5 border-black outline-none p-3"
-              placeholder="Enter you massege"
-              name="" required 
+              placeholder="Enter you message"
+              name="message" required 
               id=""
               rows="5"
             ></textarea>
-            <button className="w-full py-3 border border-black">SEND</button>
+            <Toaster
+              position="top-center"
+              reverseOrder={false}
+            />
+            <button type="submit" className="w-full py-3 border border-black">SEND</button>
           </form>
         </div>
       </div>
