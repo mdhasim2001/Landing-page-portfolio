@@ -18,15 +18,15 @@ function App() {
   const [navbar, setNavbar] = useState(false);
   const [qualification, setQualification] = useState(false);
   return (
-    <div className={`bg-white pt-5 ${qualification ? "" : ""}`}>
-      <div className="w-full navbar-font pb-5 lg:pb-0 border-b border-black  lg:border-none">
-        <nav className="lg:w-4/5 mx-5 h-full flex items-center justify-between lg:mx-auto">
-          <h2 className="logo-font w-[10%] h-full cursor-pointer flex items-center text-3xl">
+    <div id="home"  className={`bg-white pt-5 ${qualification ? "" : ""}`}>
+      <div className="w-full bg-white shadow-sm fixed z-10 top-0 h-[8vh] lg:h-[12vh] navbar-font">
+        <nav className="lg:px-[10%] h-full px-5 flex items-center justify-between mx-auto">
+          <h2 className="logo-font cursor-pointer text-3xl">
             hasim
           </h2>
           <ul
             className={`${
-              navbar ? "navbar md:w-2/4" : "hidden"
+              navbar ? "navbar" : "hidden"
             } uppercase text-[14px] lg:relative lg:flex gap-6 ml-10`}
           >
             <IoMdClose
@@ -40,13 +40,13 @@ function App() {
               <a onClick={() => setNavbar(false)} href="#about">About</a>
             </li>
             {/* <li onClick={() => setNavbar(false)}><a href="#services">Services</a></li> */}
-            <li>
-              <a onClick={() => setNavbar(false)} href="#work">Work</a>
-            </li>
             <li  className="lg:hidden">
               <a onClick={() => setNavbar(false)} href="#qualification">
                 Qualification
               </a>
+            </li>
+            <li>
+              <a onClick={() => setNavbar(false)} href="#work">Work</a>
             </li>
             <li>
               <a onClick={() => setNavbar(false)} href="#blog">Blog</a>
@@ -69,7 +69,7 @@ function App() {
           />
         </nav>
       </div>
-      <div className="lg:w-4/6 lg:mx-auto mx-5 h-[85vh] flex items-center justify-between">
+      <div className="lg:w-4/6 lg:mx-auto mx-5 h-[100vh] flex items-center justify-between">
         <div className="">
           <div className="w-[150px] mx-auto">
             <img
@@ -107,7 +107,7 @@ function App() {
       </div>
 
       {/* about section */}
-      <div id="about" className="lg:w-4/5 mx-5 lg:mx-auto pt-10">
+      <div id="about" className="lg:w-4/5 mx-5 lg:mx-auto pt-24">
         <h1 className="logo-font underline text-center text-2xl">ABOUT</h1>
         <div className="lg:flex items-center justify-between gap-5 my-10">
           <div className="border border-black lg:full h-full p-5 mb-5 lg:mb-0">
@@ -138,11 +138,11 @@ function App() {
             <div className="flex gap-5 items-center justify-around mt-10">
               <div className="text-center">
                 <h1 className="text-xl font-bold">02+</h1>
-                <p className="opacity-50 uppercase">years of experience</p>
+                <p className="opacity-50 -z-10 uppercase">years of experience</p>
               </div>
               <div className="text-center">
                 <h1 className="text-xl font-bold">20+</h1>
-                <p className="opacity-50 uppercase">projects completed</p>
+                <p className="opacity-50 -z-10 uppercase">projects completed</p>
               </div>
             </div>
             <Qualification open={qualification} close={setQualification} />
@@ -150,91 +150,8 @@ function App() {
         </div>
       </div>
 
-      {/* qualification  */}
-      {/* <div id="qualification" className="mt-10 pt-10 mx-5 lg:hidden">
-        <h1 className="logo-font text-3xl text-center mb-10 underline">
-          Qualification
-        </h1>
-        <div className="grid grid-cols-1 gap-5">
-          <div className="">
-            <div>
-              <h1 className=" my-5 text-xl font-bold ">Skill</h1>
-              <p className="mb-5 text-[15px5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                ipsa distinctio magnam dolorum enim assumenda unde dolor quaerat
-                rem nobis incidunt, a inventore, voluptatem quam veniam totam
-                esse officiis laudantium.
-              </p>
-              <div className="w-full">
-                <p className="border inline-block mb-3 border-black rounded-lg text-[14px] py-1 px-3 mr-3">
-                  #javaScript
-                </p>
-                <p className="border inline-block mb-3 border-black rounded-lg text-[14px] py-1 px-3 mr-3">
-                  #react
-                </p>
-                <p className="border inline-block mb-3 border-black rounded-lg text-[14px] py-1 px-3 mr-3">
-                  #node.js
-                </p>
-                <p className="border inline-block mb-3 border-black rounded-lg text-[14px] py-1 px-3 mr-3">
-                  #express.js
-                </p>
-                <p className="border inline-block mb-3 border-black rounded-lg text-[14px] py-1 px-3 mr-3">
-                  #mongoDB
-                </p>
-                <p className="border inline-block mb-3 border-black rounded-lg text-[14px] py-1 px-3 mr-3">
-                  #html
-                </p>
-                <p className="border inline-block mb-3 border-black rounded-lg text-[14px] py-1 px-3 mr-3">
-                  #css
-                </p>
-                <p className="border inline-block mb-3 border-black rounded-lg text-[14px] py-1 px-3 mr-3">
-                  #tailwind
-                </p>
-                <p className="border inline-block mb-3 border-black rounded-lg text-[14px] py-1 px-3 mr-3">
-                  #git
-                </p>
-                <p className="border inline-block mb-3 border-black rounded-lg text-[14px] py-1 px-3 mr-3">
-                  #github
-                </p>
-                <p className="border inline-block mb-3 border-black rounded-lg text-[14px] py-1 px-3 mr-3">
-                  #terminal
-                </p>
-                <p className="border inline-block mb-3 border-black rounded-lg text-[14px] py-1 px-3 mr-3">
-                  #AI design
-                </p>
-                <p className="border inline-block mb-3 border-black rounded-lg text-[14px] py-1 px-3 mr-3">
-                  #figma
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className=" text-start">
-            <h1 className=" my-5 text-xl font-bold">Education</h1>
-            <div>
-              <div>
-                <h1 className="font-bold mt-3">
-                  2022-2023 Full Stack Development Course
-                </h1>
-                <p className="text-[15px]">Industry : Programing Hero</p>
-                <p className="text-[15px]">Website : programing-hero.com</p>
-              </div>
-              <div>
-                <h1 className="font-bold mt-5">2022-2026 BA Honours</h1>
-                <p className="text-[15px]">
-                  University : Siddheshwari University
-                </p>
-                <p className="text-[15px]">
-                  Subject : Islamic History and Culture
-                </p>
-                <p className="text-[15px]">Study : Running</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-      {/* projects */}
-      <div id="work" className="lg:w-4/5 mx-5 lg:mx-auto pt-10">
+      {/* portfolio  */}
+      <div id="work" className="lg:w-4/5 mx-5 lg:mx-auto mt-10 pt-24">
         <h2 className="text-center my-3">My Portfolio</h2>
         <h1 className="logo-font underline text-center text-2xl">
           My Letes Work
@@ -312,7 +229,7 @@ function App() {
       </div>
 
       {/* contact me  */}
-      <div id="contact" className="lg:w-4/5 lg:mx-auto mx-5 pt-20">
+      <div id="contact" className="lg:w-4/5 lg:mx-auto mx-5 mt-10 pt-28">
         <h1 className="logo-font underline text-center text-2xl">CONTACT</h1>
         <div className="lg:flex gap-10 mt-10">
           <div className="flex-1 mb-10 lg:mb-0">

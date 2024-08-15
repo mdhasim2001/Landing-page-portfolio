@@ -3,7 +3,7 @@ import { IoMdCloseCircleOutline } from "react-icons/io";
 
 const Qualification = ({open, close}) => {
     return (
-        <div id="qualification" className={`${open ? "" : "lg:hidden"} lg:fixed lg:inset-0 lg:w-4/5 lg:h-4/5 lg:m-auto lg:bg-black lg:text-white lg:p-5 mt-10 pt-10  rounded-lg shadow-inner lg:qualification`}>
+        <div id="qualification" className={`${open ? "" : "lg:hidden"} lg:fixed lg:inset-0 lg:w-4/5 lg:h-4/5 lg:m-auto lg:bg-black lg:text-white lg:p-5 mt-10 pt-24  rounded-lg shadow-inner lg:qualification`}>
             <div className="flex items-center justify-end">
                 <p onClick={()=> {close(false)}} className='hidden lg:inline-block text-3xl cursor-pointer text-end '><IoMdCloseCircleOutline /></p>
             </div>
