@@ -354,26 +354,26 @@ function App() {
               Dhaka, Bangladesh
             </p>
           </div>
-          <div className="flex-1">
+          <form className="flex-1">
             <input
               className="w-full mb-5 p-3  outline-none border border-black"
-              type="text"
+              type="text" required
               placeholder="Enter your name"
             />
             <input
               className="w-full mb-5 p-3 outline-none border border-black"
-              type="email"
+              type="email" required
               placeholder="Enter your email"
             />
             <textarea
-              className="w-full border  mb-5 border-black outline-none p-3"
+              className="w-full border resize-none mb-5 border-black outline-none p-3"
               placeholder="Enter you massege"
-              name=""
+              name="" required 
               id=""
               rows="5"
             ></textarea>
             <button className="w-full py-3 border border-black">SEND</button>
-          </div>
+          </form>
         </div>
       </div>
 
