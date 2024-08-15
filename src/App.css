@@ -43,6 +43,6 @@
     transition: 0.3s;
 }
 
-.qualification{
+.lg:qualification{
     box-shadow: 0 0 200px 0 black;
 }

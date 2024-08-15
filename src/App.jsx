@@ -151,7 +151,7 @@ function App() {
       </div>
 
       {/* qualification  */}
-      <div id="qualification" className="mt-10 pt-10 mx-5 lg:hidden">
+      {/* <div id="qualification" className="mt-10 pt-10 mx-5 lg:hidden">
         <h1 className="logo-font text-3xl text-center mb-10 underline">
           Qualification
         </h1>
@@ -231,7 +231,7 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* projects */}
       <div id="work" className="lg:w-4/5 mx-5 lg:mx-auto pt-10">
