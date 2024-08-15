@@ -69,6 +69,8 @@ function App() {
           />
         </nav>
       </div>
+
+      {/* banner */}
       <div className="lg:w-4/6 lg:mx-auto mx-5 h-[100vh] flex items-center justify-between">
         <div className="">
           <div className="w-[150px] mx-auto">
@@ -89,15 +91,15 @@ function App() {
             aliquam aspernatur? Voluptates dicta ducimus cum nostrum autem
             doloribus dolores tempore perspiciatis praesentium.
           </p>
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center mt-10 gap-5">
             <a href="./assets/RESUME.pdf" download="RESUME.pdf" target="_blank">
-              <button className="flex items-center justify-center gap-2 py-3 px-4 md:px-5 border border-black mr-5">
+              <button className="flex items-center justify-center gap-2 py-3 px-2 md:px-5 border border-black">
                 DOWNLOAD CV
-                <MdOutlineFileDownload className="text-xl" />
+                <MdOutlineFileDownload class5Name="text-xl" />
               </button>
             </a>
             <a href="#contact">
-              <button className="flex items-center justify-center gap-2 py-3 px-4 md:px-5 border border-black">
+              <button className="flex items-center justify-center gap-2 py-3 px-2 md:px-5 border border-black">
                 CONTACT ME
                 <MdCallMade className="text-xl" />
               </button>
@@ -127,7 +129,7 @@ function App() {
                 onClick={() => {
                   setQualification(true);
                 }}
-                className="hidden lg:block py-2 px-5 border border-black mt-10"
+                className="hidden transform translate-x-2 duration-500 lg:block py-2 px-5 border border-black mt-10"
               >
                 Qualification
               </button>
