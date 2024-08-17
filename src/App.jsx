@@ -1,11 +1,11 @@
 import { useState, useRef  } from "react";
 import "./App.css";
 import { CiMenuKebab } from "react-icons/ci";
-import { IoIosArrowRoundForward, IoMdClose } from "react-icons/io";
+import { IoIosArrowRoundForward, IoMdClose, IoMdSunny } from "react-icons/io";
 import { MdCallMade, MdOutlineFileDownload } from "react-icons/md";
 import img from "./assets/Hasim.jpg";
 import { AiOutlineMail } from "react-icons/ai";
-import { IoCallOutline, IoLocationOutline } from "react-icons/io5";
+import { IoCallOutline, IoLocationOutline, IoMoon } from "react-icons/io5";
 import {
   FaFacebook,
   FaInstagramSquare,
@@ -15,10 +15,13 @@ import {
 import Qualification from "./Qualification";
 import emailjs from '@emailjs/browser';
 import toast, { Toaster } from "react-hot-toast";
+import Button from "./Components/Button/Button";
+import Input from "./Components/Input/Input";
 
 function App() {
   const [navbar, setNavbar] = useState(false);
   const [qualification, setQualification] = useState(false);
+  const [theme, setTheme] = useState(false)
 
 
     const form = useRef();
@@ -42,8 +45,8 @@ function App() {
     };
 
   return (
-    <div id="home"  className={`bg-white pt-5 ${qualification ? "" : ""}`}>
-      <div className="w-full bg-white shadow-sm fixed z-10 top-0 h-[8vh] lg:h-[12vh] navbar-font">
+    <div id="home"  className={`${theme ? "bg-[#050318] text-white" : ""}  pt-5 ${qualification ? "" : ""}`}>
+      <div className={`w-full ${theme ? "bg-[#050318]" : "bg-white"}   fixed z-10 top-0 h-[8vh] lg:h-[12vh] navbar-font`}>
         <nav className="lg:px-[10%] h-full px-5 flex items-center justify-between mx-auto">
           <h2 className="logo-font cursor-pointer text-3xl">
             hasim
@@ -51,7 +54,7 @@ function App() {
           <ul
             className={`${
               navbar ? "navbar" : "hidden"
-            } uppercase text-[14px] lg:relative lg:flex gap-6 ml-10`}
+            } ${theme ? " bg-white lg:bg-[#050318] text-[#050318] lg:text-white" : "bg-[#050318] lg:bg-white text-white lg:text-black"} uppercase text-[14px] lg:relative lg:flex gap-6 ml-10`}
           >
             <IoMdClose
               onClick={() => setNavbar(false)}
@@ -84,16 +87,15 @@ function App() {
               </a>
             </li>
           </ul>
-          <a
-            href="#contact"
-            className="py-2 px-4 border hidden lg:block border-black"
-          >
-            Contact me
-          </a>
-          <CiMenuKebab
-            onClick={() => setNavbar(true)}
-            className="lg:hidden text-3xl"
-          />
+          <div className="flex items-center gap-2 lg:ml-16">
+              <button onClick={()=> {setTheme(false)}} className={`${theme ? "" : "hidden"} p-1 cursor-pointer border rounded-full`}><IoMdSunny /></button>
+              <button onClick={()=> {setTheme(true)}} className={`${theme ? "hidden" : ""} p-1 cursor-pointer border rounded-full`}><IoMoon /></button>
+            {/* <Button className="hidden lg:block" bntName="contact me" tag="#contact"/> */}
+            <CiMenuKebab
+              onClick={() => setNavbar(true)}
+              className="lg:hidden text-3xl"
+            />
+          </div>
         </nav>
       </div>
 
@@ -119,18 +121,8 @@ function App() {
             doloribus dolores tempore perspiciatis praesentium.
           </p>
           <div className="flex items-center justify-center mt-10 gap-5">
-            <a href="./assets/RESUME.pdf" download="RESUME.pdf" target="_blank">
-              <button className="flex items-center justify-center gap-2 py-3 px-2 md:px-5 border border-black">
-                DOWNLOAD CV
-                <MdOutlineFileDownload class5Name="text-xl" />
-              </button>
-            </a>
-            <a href="#contact">
-              <button className="flex items-center justify-center gap-2 py-3 px-2 md:px-5 border border-black">
-                CONTACT ME
-                <MdCallMade className="text-xl" />
-              </button>
-            </a>
+            <Button bntName="download cv" theme={theme} tag="./assets/RESUME.pdf" download="download" icon={<MdOutlineFileDownload />}/>
+            <Button bntName="contact me" theme={theme} tag="#contact" icon={<MdCallMade/>}/>
           </div>
         </div>
       </div>
@@ -151,18 +143,12 @@ function App() {
               dolore id totam neque explicabo suscipit deserunt accusamus
               tempora, natus cum praesentium laudantium! Est, natus.
             </p>
-            <div className="flex gap-5 items-center">
-              <button
-                onClick={() => {
-                  setQualification(true);
-                }}
-                className="hidden transform translate-x-2 duration-500 lg:block py-2 px-5 border border-black mt-10"
-              >
-                Qualification
-              </button>
-              <button className="py-2 px-9 border border-black mt-10">
-                Hire Me
-              </button>
+            <div className="flex gap-5 mt-10 items-center">
+              <div onClick={() => {setQualification(true)}} className="hidden lg:block">
+                <Button  bntName="qualification" theme={theme}/>
+              </div>
+              <Button bntName="hire me" theme={theme}/>
+              
             </div>
             <div className="flex gap-5 items-center justify-around mt-10">
               <div className="text-center">
@@ -174,7 +160,7 @@ function App() {
                 <p className="opacity-50 -z-10 uppercase">projects completed</p>
               </div>
             </div>
-            <Qualification open={qualification} close={setQualification} />
+            <Qualification theme={theme} open={qualification} close={setQualification} />
           </div>
         </div>
       </div>
@@ -191,7 +177,7 @@ function App() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
           <div className="travel w-full h-[200px] rounded-md flex items-end justify-center">
-            <div className="w-4/5 bg-white mb-5 px-3 py-2 rounded-md flex items-center justify-between">
+            <div className={`w-4/5 ${theme ? "bg-[#050318]" : "bg-white"} mb-5 px-3 py-2 rounded-md flex items-center justify-between`}>
               <div>
                 <h1 className="font-bold">Travel</h1>
                 <p className="text-[12px]">Web Design</p>
@@ -206,7 +192,7 @@ function App() {
             </div>
           </div>
           <div className="smart-ticket w-full h-[200px] rounded-md flex items-end justify-center">
-            <div className="w-4/5 bg-white mb-5 px-3 py-2 rounded-md flex items-center justify-between">
+            <div className={`w-4/5 ${theme ? "bg-[#050318]" : "bg-white"} mb-5 px-3 py-2 rounded-md flex items-center justify-between`}>
               <div>
                 <h1 className="font-bold">Smart Ticket</h1>
                 <p className="text-[12px]">Web Design</p>
@@ -221,7 +207,7 @@ function App() {
             </div>
           </div>
           <div className="restaurent w-full h-[200px] rounded-md flex items-end justify-center">
-            <div className="w-4/5 bg-white mb-5 px-3 py-2 rounded-md flex items-center justify-between">
+            <div className={`w-4/5 ${theme ? "bg-[#050318]" : "bg-white"} mb-5 px-3 py-2 rounded-md flex items-center justify-between`}>
               <div>
                 <h1 className="font-bold">Restaurent</h1>
                 <p className="text-[12px]">Web Design</p>
@@ -236,7 +222,7 @@ function App() {
             </div>
           </div>
           <div className="office w-full h-[200px] rounded-md flex items-end justify-center">
-            <div className="w-4/5 bg-white mb-5 px-3 py-2 rounded-md flex items-center justify-between">
+            <div className={`w-4/5 ${theme ? "bg-[#050318]" : "bg-white"} mb-5 px-3 py-2 rounded-md flex items-center justify-between`}>
               <div>
                 <h1 className="font-bold">Office</h1>
                 <p className="text-[12px]">Web Design</p>
@@ -251,10 +237,9 @@ function App() {
             </div>
           </div>
         </div>
-        <button className="w-32 mt-10 mx-auto border border-black py-2 px-3 text-center flex items-center justify-between">
-          Show more
-          <IoIosArrowRoundForward />
-        </button>
+        <div className="w-40 mx-auto mt-10">
+          <Button bntName="show more" theme={theme} icon={<IoIosArrowRoundForward />}/>
+        </div>
       </div>
 
       {/* contact me  */}
@@ -272,7 +257,7 @@ function App() {
                 href="https://mail.google.com/mail/u/0/#inbox"
                 target="_blank"
                 title="E-mail"
-                className="cursor-pointer bg-[#E5E5E5] p-3"
+                className="cursor-pointer p-3"
               >
                 <AiOutlineMail />
               </a>
@@ -282,7 +267,7 @@ function App() {
               <a
                 href="#"
                 title="Call"
-                className="bg-[#E5E5E5] cursor-pointer p-3"
+                className=" cursor-pointer p-3"
               >
                 <IoCallOutline />
               </a>
@@ -293,7 +278,7 @@ function App() {
                 href="https://www.google.com/maps"
                 target="_blank"
                 title="Location"
-                className="cursor-pointer bg-[#E5E5E5] p-3"
+                className="cursor-pointer p-3"
               >
                 <IoLocationOutline />
               </a>
@@ -301,18 +286,10 @@ function App() {
             </p>
           </div>
           <form ref={form} onSubmit={sendEmail} className="flex-1">
-            <input
-              className="w-full mb-5 p-3  outline-none border border-black"
-              type="text" required name="name"
-              placeholder="Enter your name"
-            />
-            <input
-              className="w-full mb-5 p-3 outline-none border border-black"
-              type="email" required name="email"
-              placeholder="Enter your email"
-            />
+            <Input type="text" name="name" placeholder="Enter your name" theme={theme}/>
+            <Input type="email" name="email" placeholder="Enter your email" theme={theme}/>
             <textarea
-              className="w-full border resize-none mb-5 border-black outline-none p-3"
+              className={`w-full border resize-none mb-5 ${theme ? "bg-[#050318] border-white" : "border-black" } outline-none p-3`}
               placeholder="Enter you message"
               name="message" required 
               id=""
@@ -322,13 +299,13 @@ function App() {
               position="top-center"
               reverseOrder={false}
             />
-            <button type="submit" className="w-full py-3 border border-black">SEND</button>
+            <button type="submit" className={`w-full py-3 border ${theme ? "bg-[#050318] border-white" : "border-black" }`}>SEND</button>
           </form>
         </div>
       </div>
 
       {/* footer section  */}
-      <div className="px-5 lg:px-[10%] mt-20 py-12 bg-[#E5E5E5]">
+      <div className="px-5 lg:px-[10%] mt-20 py-12 bg-[#050318] text-white">
         <h1 className="logo-font text-3xl text-center">hasim</h1>
         <div className="flex gap-3 items-center justify-center">
           <a
@@ -353,7 +330,7 @@ function App() {
             <FaInstagramSquare />
           </a>
         </div>
-        <div className="border border-black my-10"></div>
+        <div className="border my-10"></div>
         <p className="text-center text-[14px]">
           2024 MD Hasim. All rights reserved.
         </p>
