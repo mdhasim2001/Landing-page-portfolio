@@ -15,7 +15,7 @@ export const About = () => {
           ease: "easeIn",
           duration: 1,
         }}
-        className=" text-center text-7xl lg:text-8xl font-medium uppercase bg-gradient-to-r from-red-500 to-blue-400 text-transparent bg-clip-text"
+        className=" text-center text-6xl lg:text-8xl font-medium uppercase bg-gradient-to-r from-red-500 to-blue-400 text-transparent bg-clip-text"
       >
         ABOUT
       </motion.h1>
