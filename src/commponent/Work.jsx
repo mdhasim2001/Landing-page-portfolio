@@ -5,7 +5,7 @@ import office from "../assets/office.jpg";
 
 export const Work = () => {
   return (
-    <div id="work" className="mt-10 pt-24">
+    <div id="work" className="mt-10 pt-24 overflow-hidden">
       <motion.h1
         initial={{ y: 100, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}

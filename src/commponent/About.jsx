@@ -4,7 +4,7 @@ import { FcRight } from "react-icons/fc";
 
 export const About = () => {
   return (
-    <div id="about" className="pt-24">
+    <div id="about" className="pt-24 overflow-hidden">
       <motion.h1
         initial={{ y: 100, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -15,7 +15,7 @@ export const About = () => {
           ease: "easeIn",
           duration: 1,
         }}
-        className="text-center text-7xl lg:text-8xl font-medium uppercase bg-gradient-to-r from-red-500 to-blue-400 text-transparent bg-clip-text"
+        className=" text-center text-7xl lg:text-8xl font-medium uppercase bg-gradient-to-r from-red-500 to-blue-400 text-transparent bg-clip-text"
       >
         ABOUT
       </motion.h1>

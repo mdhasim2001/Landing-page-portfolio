@@ -24,7 +24,7 @@ export const Contact = () => {
       );
   };
   return (
-    <div id="contact" className=" mt-10 pt-28">
+    <div id="contact" className=" mt-10 pt-24 overflow-hidden">
       <motion.h1
         initial={{ y: 100, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}

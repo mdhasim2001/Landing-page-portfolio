@@ -15,7 +15,7 @@ export const Navbar = () => {
             ease: "easeIn",
             duration: 1,
           }}
-          className={`border text-black font-medium bg-gradient-to-r from-red-300 via-green-300 to-blue-300 flex items-center justify-center gap-3 md:gap-10 px-4 md:px-16 py-2 md:py-3 rounded-full uppercase `}
+          className={`border text-black font-medium bg-gradient-to-r from-red-300 via-green-300 to-blue-300 flex items-center justify-center gap-3 md:gap-10 px-4 md:px-16 py-2 md:py-3 rounded-full uppercase shadow-2xl shadow-white`}
         >
           <li>
             <a href="#home">home</a>

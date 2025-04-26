@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 export const Services = () => {
   return (
-    <div id="services" className="pt-24 ">
+    <div id="services" className="pt-24 overflow-hidden">
       <motion.h1
         initial={{ y: 100, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
