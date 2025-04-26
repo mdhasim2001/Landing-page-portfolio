@@ -58,11 +58,11 @@ export const About = () => {
 
         {/* skill  */}
         <motion.div
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
+          initial={{ y: -100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
           transition={{
             delay: 0.3,
-            x: { type: "spring", stiffness: 60 },
+            y: { type: "spring", stiffness: 60 },
             opacity: { duration: 1 },
             ease: "easeIn",
             duration: 1,
@@ -107,7 +107,7 @@ export const About = () => {
 
         {/* education  */}
         <motion.div
-          initial={{ x: -100, opacity: 0 }}
+          initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{
             delay: 0.3,
